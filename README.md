@@ -5,6 +5,7 @@
 * Install ixGuard Package
 * Start IPA obfustication
 * Upload the obfusticated IPA 
+* Troubleshoting
 
 
 ## Create ixGuard account
@@ -43,7 +44,7 @@ and the right identity on this file
 
 # Time for the obfustication 
 
-after setting the ixguard-license.txt inside the generated IPA folder run this command ixguard -config=ig-config.yml -o=protectedIPA.ipa yourIPA.ipa
+after setting the ixguard-license.txt inside the generated IPA folder run this command ixguard -config=ig-config.yml -o=protectedIPA.ipa yourIPA.ipa,
 it will take a while to generate the protectedIPA file 
 
 
@@ -51,6 +52,13 @@ it will take a while to generate the protectedIPA file
 It is preferd to sign the IPA with appStore certificate when you generating from xcode and then in ig-config.yml file sign it with development.
 I mean you can set the identity and provisioning with development and test your IPA 
 and thesn resign it with appStore certificate hash and provisioning after that you can use transporter to upload to app store  
+
+# Troubleshoting
+Before using the ixGuard make sure from the below 
+
+1- Make sure you have the lates versions of your pods libraries 
+2- Make sure you set the right paths and identity inside ig-config.yml
+3- Make well testing for the obfusticated IPA before launching as sometimes it leads to crashes
 
 
 
